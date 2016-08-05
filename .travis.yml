@@ -46,3 +46,4 @@ after_script:
 
 git:
   depth: 3
+
