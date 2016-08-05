@@ -1,9 +1,11 @@
-sudo: false
+sudo: true
 
-# # "javascript" so the "node" program is installed
-# language: javascript
-language: objective-c
-osx_image: xcode7.3
+# "javascript" so the "node" program is installed
+language: javascript
+
+# # "objective-c" to permit use of travis_debug script
+# language: objective-c
+# osx_image: xcode7.3
 
 services:
   - docker
