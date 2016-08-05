@@ -1,4 +1,4 @@
-sudo: false
+sudo: required
 
 # # "javascript" so the "node" program is installed
 # language: javascript
