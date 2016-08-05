@@ -1,7 +1,9 @@
 sudo: false
 
-# So the "node" program is installed
-language: javascript
+# # "javascript" so the "node" program is installed
+# language: javascript
+language: objective-c
+osx_image: xcode7.3
 
 services:
   - docker
@@ -25,6 +27,7 @@ before_script:
 # with no error (!).
 script:
 - travis_wait 50 docker run mdernst/ubuntu-for-cf-$JDKVER /bin/sh -c "export JAVA_HOME=\`which javac|xargs readlink -f|xargs dirname|xargs dirname\` && git clone --quiet -b $TRAVIS_BRANCH --depth 3 https://github.com/$TRAVIS_REPO_SLUG.git checker-framework && cd checker-framework && java -version && javac -version && ./.travis-build.sh $GROUP"
+- travis_debug
 
 after_script:
   - |
